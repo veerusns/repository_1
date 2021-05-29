@@ -1,31 +1,41 @@
-#include <stdio.h>
-#include <string.h>
- 
-main()
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+void main()
 {
-    int smallest, secondsmallest;
-    int array[100], size, i;
-    printf("\n How many elements do you want to enter: ");
-    scanf("%d", &size);
-    printf("\nEnter %d elements: ", size);
-    for (i = 0 ; i < size; i++)
-        scanf("%d", &array[i]);
-    if (array[0] < array[1]) {
-        smallest = array[0];
-        secondsmallest = array[1];
+    int small,second_small;
+    int arr[50],size,i;
+    clrscr();
+    printf("\nEnter the Number of Elements:");
+    scanf("%d",&size);
+    for(i=0;i<size;i++)
+    {
+	       printf("\nEnter the %d element:",i+1);
+	       scanf("%d",&arr[i]);
     }
-    else {
-      smallest = array[1];
-      secondsmallest = array[0];
+    if(arr[0]<arr[1])
+    {
+        small=arr[0];
+	       second_small=arr[1];
     }
-    for (i = 2; i < size; i++) {
-        if (array[i] < smallest) {
-        secondsmallest = smallest;
-        smallest = array[i];
-        }
-        else if (array[i] < secondsmallest) {
-            secondsmallest = array[i];
-        }
+    else
+    {
+       small=arr[1];
+       second_small=arr[0];
     }
-    printf(" \nSecond smallest element is %d", secondsmallest);
+    for(i=2;i<size;i++)
+    {
+	      if(arr[i]<small)
+	      {
+		          second_small=small;
+		          small=arr[i];
+       }
+	      else if(arr[i]<second_small)
+     	 {
+	           second_small=arr[i];
+       }
+    }
+    printf(" \nThe Smallest element is %d", small);
+    printf(" \nThe Second Smallest element is %d", second_small);
+    getch();
 }
